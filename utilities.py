@@ -1,4 +1,5 @@
 from scipy.spatial import distance
+from constants import *
 
 class Geometry(object):
     ''' Contains information about coordinates of microphones 
@@ -16,3 +17,8 @@ class Geometry(object):
                 distances.append(distance.euclidean(signal_position, mic))
         return distances
 
+def calc_delay(distance, atmo = None):
+    ''' Converts meters to seconds according to speed of sound ''' 
+    return  distance / SPEED_OF_SOUND
+
+def correct_speed_of_sound(humidity, )
